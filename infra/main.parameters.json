@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "${AZURE_ENV_NAME}"
+    },
+    "resourceGroupName": {
+      "value": "${AZURE_RESOURCE_GROUP}"
+    },
+    "location": {
+      "value": "${AZURE_LOCATION}"
+    },
+    "principalId": {
+      "value": "${AZURE_PRINCIPAL_ID}"
+    },
+    "openAiServiceLocation": {
+      "value": "${AZURE_OPENAI_SERVICE_LOCATION}"
+    },
+    "openAiServiceName": {
+      "value": "${AZURE_OPENAI_SERVICE}"
+    },
+    "openAiResourceGroupName": {
+      "value": "${AZURE_OPENAI_RESOURCE_GROUP}"
+    },
+    "reuseExistingOpenAi": {
+      "value": "${AZURE_OPENAI_REUSE_EXISTING=false}"
+    },
+    "openAiEndpoint": {
+      "value": "${AZURE_OPENAI_ENDPOINT}"
+    },
+    "openAiRealtimeDeployment": {
+      "value": "${AZURE_OPENAI_REALTIME_DEPLOYMENT}"
+    },
+    "openAiRealtimeVoiceChoice": {
+      "value": "${AZURE_OPENAI_REALTIME_VOICE_CHOICE=alloy}"
+    },
+    "backendServiceName": {
+      "value": "${AZURE_CONTAINER_APP_NAME}"
+    },
+    "realtimeDeploymentCapacity": {
+      "value": "${AZURE_OPENAI_REALTIME_DEPLOYMENT_CAPACITY=1}"
+    },
+    "embeddingDeploymentCapacity": {
+      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY=30}"
+    },
+    "embeddingDimensions": {
+      "value": "${AZURE_OPENAI_EMB_DIMENSIONS}"
+    },
+    "logAnalyticsName": {
+      "value": "${AZURE_LOG_ANALYTICS}"
+    },
+    "runningOnGh": {
+      "value": "${GITHUB_ACTIONS}"
+    },
+    "runningOnAdo": {
+      "value": "${TF_BUILD}"
+    },
+    "webAppExists": {
+      "value": "${SERVICE_WEB_RESOURCE_EXISTS=false}"
+    },
+    "azureContainerAppsWorkloadProfile": {
+      "value": "${AZURE_CONTAINER_APPS_WORKLOAD_PROFILE=Consumption}"
+    }
+  }
+}

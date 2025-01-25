@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: openai-realtime-spacelaunch
+metadata:
+  template: openai-realtime-spacelaunch@0.0.3-beta
+services:
+  backend:
+    project: ./app
+    language: py
+    host: containerapp
+    docker:
+      remoteBuild: false 
+pipeline:
+  variables:
+    - AZURE_OPENAI_SERVICE
+    - AZURE_OPENAI_RESOURCE_GROUP
+    - AZURE_OPENAI_REUSE_EXISTING
+    - AZURE_OPENAI_ENDPOINT
+    - AZURE_OPENAI_REALTIME_DEPLOYMENT
+    - AZURE_OPENAI_REALTIME_DEPLOYMENT_CAPACITY
+    - AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY
+    - AZURE_OPENAI_EMB_DIMENSIONS
+    - AZURE_CONTAINER_APP_NAME
+    - AZURE_LOG_ANALYTICS
+    - AZURE_CONTAINER_APPS_WORKLOAD_PROFILE
