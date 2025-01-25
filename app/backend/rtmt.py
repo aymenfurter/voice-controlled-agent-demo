@@ -180,6 +180,14 @@ class RTMiddleTier:
 
         return updated_message
 
+    # Audio flow explanation:
+    # 1. Frontend: Audio is captured in recorder.ts
+    # 2. Frontend: Audio is chunked and base64-encoded by handleAudioData
+    # 3. Frontend: Chunks are sent to server via addUserAudio using WebSocket messages
+    #             (type "input_audio_buffer.append")
+    # 4. Backend: This _forward_messages function in rtmt.py relays chunks to OpenAI realtime socket
+    # 5. Backend: Audio responses come back from OpenAI (e.g., "response.audio.delta")
+    # 6. Frontend: Audio responses are handled by useAudioPlayer component
     async def _forward_messages(self, ws: web.WebSocketResponse):
         async with aiohttp.ClientSession(base_url=self.endpoint) as session:
             params = { "api-version": self.api_version, "deployment": self.deployment}
