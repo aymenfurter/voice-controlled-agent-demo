@@ -2,7 +2,7 @@
   <img src="preview.png" width="700"/>
   <h1>Voice-Controlled Space Program Agent</h1>
   
-  <p><strong>A demo showcasing voice-controlled systems using Azure OpenAI's function calling capabilities</strong></p>
+  <p><strong>A demo showcasing voice-controlled systems using Azure OpenAI's realtime & function calling capabilities</strong></p>
   
   [![Azure](https://img.shields.io/badge/azure-ready-0078D4?style=flat-square)](https://azure.microsoft.com)
   [![Python](https://img.shields.io/badge/python-3.11-yellow?style=flat-square)](https://python.org)
